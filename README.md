@@ -24,12 +24,10 @@ python refresh.py
 ### win11
 ##### 1.进入refresh文件夹，右键菜单点击open in terminal(打开终端)
 ##### 2.在终端中输入.\refresh.exe
-##### 3.输入要访问的次数（当然越大越好）
 
 ### win10/7
 ##### 1.进入refresh文件夹，点击文件夹上的路径，输入cmd打开终端
 ##### 2.在终端中输入.\refresh.exe
-##### 3.在终端中输入.\refresh.exe
 
 
 # 修改访问链接 
