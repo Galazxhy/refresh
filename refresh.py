@@ -1,9 +1,9 @@
+import threading
 import requests
 import codecs
 from tqdm import tqdm
 import random
 import time
-
 
 def main():
     # 获取代理header和ip
@@ -48,12 +48,21 @@ def askURL(url,header,ip):
     except:
         print("本次访问失败!")
 
-if __name__ == '__main__':
-    while True:
-        num = 30
-        for num in tqdm(range(num), desc="正在访问", ncols=70):
-            print("这是第" + str(num + 1) + "次访问")
-            main()
-        print("------one cycle end-----")
-        time.sleep(5)
+class refresh_thread(threading.Thread):
+    def __init__(self, thread_name):
+        super(refresh_thread, self).__init__(name = thread_name)
 
+    def run(self):
+        print("%s正在运行中......" % self.name)
+
+
+def thread_fun():
+    num = 0
+    while 1:
+        print("访问")
+        main()
+
+if __name__ == '__main__':
+    for i in range(15):
+        t = threading.Thread(target=thread_fun)
+        t.start()
