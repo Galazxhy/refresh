@@ -3,8 +3,8 @@
 # 请务必看完！！！
 # Linux
 ##### Linux已上传python源码
-  pip install -r requirements.txt
-  python refresh.py
+~pip install -r requirements.txt
+~python refresh.py
 
 # windows
 # 直接点击链接下载可执行文件即可
