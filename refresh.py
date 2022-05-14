@@ -49,9 +49,11 @@ def askURL(url,header,ip):
         print("本次访问失败!")
 
 if __name__ == '__main__':
-    # 获取模拟访问的次数
-    num = int(input("请输入模拟访问次数："))
-    for num in tqdm(range(num),desc="正在访问",ncols=70):
-        print("这是第"+str(num+1)+"次访问")
-        main()
+    while True:
+        num = 30
+        for num in tqdm(range(num), desc="正在访问", ncols=70):
+            print("这是第" + str(num + 1) + "次访问")
+            main()
+        print("------one cycle end-----")
+        time.sleep(5)
 

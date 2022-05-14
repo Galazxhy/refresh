@@ -1,5 +1,10 @@
 # refresh
-浏览量刷子
+浏览量刷子。
+
+如果是自己有闲置服务器资源的，可以考虑下载源代码refresh.py放在服务器上执行。该改版是默认无限循环的。
+
+使用前需要requests codecs tqdm 这几个包。
+
 # 请务必看完！！！
 # Linux
 ##### Linux可使用python源码
