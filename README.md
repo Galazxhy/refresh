@@ -8,7 +8,6 @@
 # 请务必看完！！！
 # Linux
 ##### Linux可使用python源码
-##### 无限循环版本指路  https://github.com/WendaoLee/refresh
 ```
 pip install -r requirements.txt
 python refresh.py
