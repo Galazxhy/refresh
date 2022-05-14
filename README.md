@@ -2,7 +2,7 @@
 浏览量刷子
 # 请务必看完！！！
 # Linux
-##### Linux已上传python源码
+##### Linux可使用python源码
 ```
 pip install -r requirements.txt
 python refresh.py
