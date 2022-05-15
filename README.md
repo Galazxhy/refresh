@@ -3,9 +3,13 @@
 
 如果是自己有闲置服务器资源的，可以考虑下载源代码refresh.py放在服务器上执行。
 
-
 # 请务必看完！！！
 # Linux
+
+##### 可执行文件下载地址
+##### 链接：https://pan.baidu.com/s/18TOwYJmn_zjwWRuqrIO7Kg 
+##### 提取码：soul
+
 ##### Linux可使用python源码
 ```
 pip install -r requirements.txt
