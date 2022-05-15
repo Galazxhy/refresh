@@ -5,7 +5,7 @@ from tqdm import tqdm
 import random
 import time
 
-def main():
+def main(i):
     # 获取代理header和ip
     header = head()
     ip = ipProxies()
@@ -14,14 +14,14 @@ def main():
     url = getURL()
 
     # 访问URL
-    return askURL(url,header,ip)
+    return askURL(i,url,header,ip)
 
 def ipProxies():
     f = codecs.open("IP.txt", "r+", encoding="utf-8")
     ip = f.readlines()
     f.close()
     IP = {'http':random.choice(ip)[-2::-1][::-1]}
-    print("本次使用IP(proxies)为：",IP['http'])
+    # print("本次使用IP(proxies)为：",IP['http'])
     return IP
 
 def head():
@@ -29,7 +29,7 @@ def head():
     head = f.readlines()
     f.close()
     header = {"User-Agent":random.choice(head)[-3::-1][::-1]}
-    print("本次使用header(User-Agent)为：", header["User-Agent"])
+    # print("本次使用header(User-Agent)为：", header["User-Agent"])
     return header
 
 def getURL():
@@ -37,32 +37,25 @@ def getURL():
     URL = f.readlines()
     f.close()
     url = random.choice(URL)[-2::-1][::-1]
-    print("本次使用访问的链接为：", url)
+    # print("本次使用访问的链接为：", url)
     return url
 
-def askURL(url,header,ip):
+def askURL(i,url,header,ip):
     try:
         request = requests.get(url=url,headers=header,proxies=ip)
-        print(request)
+        print("thread:{}".format(i),request)
         time.sleep(5)
     except:
-        print("本次访问失败!")
+        print("")
+        # print("本次访问失败!")
 
-class refresh_thread(threading.Thread):
-    def __init__(self, thread_name):
-        super(refresh_thread, self).__init__(name = thread_name)
-
-    def run(self):
-        print("%s正在运行中......" % self.name)
-
-
-def thread_fun():
-    num = 0
+def thread_fun(i):
     while 1:
-        print("访问")
-        main()
+        print("thread:{} 访问".format(i))
+        main(i)
 
 if __name__ == '__main__':
-    for i in range(15):
-        t = threading.Thread(target=thread_fun)
+    thread_num = int(input("输入线程数量(建议为15)："))
+    for i in range(thread_num):
+        t = threading.Thread(target=thread_fun, args=(i,))
         t.start()
